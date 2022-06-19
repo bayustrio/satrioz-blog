@@ -3,7 +3,7 @@ import { IDataStory } from "../../Types/Story-type";
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 // import { dracula as dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import CodeBlock from "../Markdown/CodeBlog";
+// import CodeBlock from "../Markdown/CodeBlog";
 import "prismjs/themes/prism-tomorrow.css";
 // import { NormalComponents, SpecialComponents } from 'react-markdown/src/ast-to-react';
 import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -27,7 +27,7 @@ const DetailStory: React.FC<IProps> = ({ data }) => {
 
         <div>
           {/* CONTENT */}
-          <CodeBlock content={data.content} />
+          {/* <CodeBlock content={data.content} /> */}
           {/* <ReactMarkdown components={CodeBlock}>{data.content}</ReactMarkdown> */}
         </div>
       </div>
