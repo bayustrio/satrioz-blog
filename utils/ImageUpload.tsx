@@ -15,7 +15,7 @@ export const checkImage = (image: File | null) => {
 };
 
 // post image
-export const uploadImage = async (image: string | File) => {
+export const uploadImage = async (image: any | File) => {
   let url = "";
   try {
     const formData = new FormData();

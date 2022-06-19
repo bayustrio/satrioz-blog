@@ -10,7 +10,7 @@ const CreatePost = () => {
 
   // STATE
   const [story, setStory] = useState<IStory>({} as IStory);
-  const [imgPrev, setImgPrev] = useState<string | File>("");
+  const [imgPrev, setImgPrev] = useState<any | File>("");
   const [loading, setLoading] = useState<boolean>(false);
   const { content, image } = story;
 

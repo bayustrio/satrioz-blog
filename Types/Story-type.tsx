@@ -1,6 +1,6 @@
 export interface IStory {
   content: string;
-  image: File | undefined;
+  image: File | null;
 }
 
 export interface ICreateStory {
