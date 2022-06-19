@@ -25,7 +25,7 @@ export interface IGetDataUser extends ILoginDataUser {
 
 export interface IUpdateProfile {
   username: string;
-  image: string | File;
+  image: null | File;
   photoPrev: File | string;
   email: string;
 }
