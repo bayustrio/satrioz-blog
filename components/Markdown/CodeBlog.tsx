@@ -1,34 +1,51 @@
-import React from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula as dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
-interface IProps {
+import ReactMarkdown from "react-markdown";
+// import {
+//   NormalComponents,
+//   SpecialComponents,
+// } from "react-markdown/src/ast-to-react";
+import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { FunctionComponent } from "react";
+interface INode {
   className: string;
   children: React.ReactNode;
   inline: boolean;
   node: Element;
   props: object;
+  components: any;
 }
 
-const CodeBlock = {
-  code({ node, inline, className, children, ...props }: IProps) {
-    const match = /language-(\w+)/.exec(className || "");
-    return !inline && match ? (
-      <SyntaxHighlighter
-        showLineNumbers
-        style={dracula}
-        language={match[1]}
-        PreTag="div"
-        {...props}
-      >
-        {String(children).replace(/\n$/, "")}
-      </SyntaxHighlighter>
-    ) : (
-      <code className={className} {...props}>
-        {children}
-      </code>
-    );
-  },
+interface IProps {
+  content: string;
+}
+
+const CodeBlock: FunctionComponent<IProps> = ({ content }) => {
+  const components: Partial<any> = {
+    code({ node, inline, className, children, ...props }: INode) {
+      const match = /language-(\w+)/.exec(className || "");
+
+      return !inline && match ? (
+        <SyntaxHighlighter
+          style={materialLight}
+          PreTag="div"
+          language={match[1]}
+          children={String(children).replace(/\n$/, "")}
+          {...props}
+        />
+      ) : (
+        <code className={className ? className : ""} {...props}>
+          {children}
+        </code>
+      );
+    },
+  };
+
+  return (
+    <div className="markdown-body">
+      <ReactMarkdown components={components} children={content} />
+    </div>
+  );
 };
 
 export default CodeBlock;

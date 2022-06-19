@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { IDataStory } from "../../Types/Story-type";
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula as dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import { dracula as dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodeBlock from "../Markdown/CodeBlog";
 import "prismjs/themes/prism-tomorrow.css";
+// import { NormalComponents, SpecialComponents } from 'react-markdown/src/ast-to-react';
+import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import ReactMarkdown from "react-markdown";
 // import {useState} from 'react'
 interface IProps {
@@ -25,7 +27,8 @@ const DetailStory: React.FC<IProps> = ({ data }) => {
 
         <div>
           {/* CONTENT */}
-          <ReactMarkdown components={CodeBlock}>{data.content}</ReactMarkdown>
+          <CodeBlock content={data.content} />
+          {/* <ReactMarkdown components={CodeBlock}>{data.content}</ReactMarkdown> */}
         </div>
       </div>
     </div>
