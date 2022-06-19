@@ -9,7 +9,10 @@ const CardStory = ({ data }: { data: IFullDataStory }) => {
     <>
       <div className="w-full min-h-screen flex-wrap flex  xl:px-10 p-2 lg:px-10 md:px-7 sm:px-7 dark:bg-bgDark bg-yellowLight">
         {data.data.map((item, idx) => (
-          <div className="w-[25%] hover:shadow-lg overflow-hidden rounded-lg h-[40vh] bg-yellowNav dark:bg-blackCard">
+          <div
+            key={idx}
+            className="w-[25%] hover:shadow-lg overflow-hidden rounded-lg h-[40vh] bg-yellowNav dark:bg-blackCard"
+          >
             <div className="w-full overflow-hidden h-[25vh] bg-red-500 ">
               <img src={item.image} className="object-cover w-full" />
             </div>
