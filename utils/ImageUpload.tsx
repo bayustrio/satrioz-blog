@@ -1,6 +1,6 @@
 import axios from "axios";
 // checking image upload
-export const checkImage = (image: File | string) => {
+export const checkImage = (image: File | null) => {
   const types = ["image/png", "image/jpeg"];
   let err = "";
   if (!image) return (err = "File does not exist.");
