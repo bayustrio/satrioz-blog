@@ -38,10 +38,8 @@ const CardProfile = ({ data }: { data: IInfoDataUser | undefined }) => {
     <>
       <div className="p-2 w-[50%] h-[50vh] bg-yellowNav dark:bg-blackLight">
         <div className="flex w-full flex-col justify-center">
-          <Image
+          <img
             className="xl:w-40 xl:h-40 lg:w-40 lg:h-40  rounded-full"
-            width={100}
-            height={100}
             src={`${data?.photo}`}
           />
           <div className="">
