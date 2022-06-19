@@ -24,7 +24,7 @@ const StoryDetail: React.FC<IProps> = ({ data }) => {
     <Fragment>
       <NextSeo title={data.title} />
       <div className="w-full min-h-screen xl:px-10 p-2 lg:px-10 md:px-7 sm:px-7 dark:bg-bgDark bg-yellowLight">
-        <DetailStory data={data} />
+        {/* <DetailStory data={data} /> */}
       </div>
     </Fragment>
   );
