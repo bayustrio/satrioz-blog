@@ -13,6 +13,7 @@ interface INode {
   inline: boolean;
   node: Element;
   props: object;
+  code?: keyof JSX.IntrinsicElements | undefined;
   components: any;
 }
 
@@ -43,7 +44,12 @@ const CodeBlock: FunctionComponent<IProps> = ({ content }) => {
 
   return (
     <div className="markdown-body">
-      <ReactMarkdown components={components} children={content} />
+      <ReactMarkdown
+        children={content}
+        className="dark:text-white mt-4"
+        components={components}
+      />
+      {/* <ReactMarkdown components={components} children={content} /> */}
     </div>
   );
 };
