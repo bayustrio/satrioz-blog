@@ -115,7 +115,13 @@ const CreatePost = () => {
           <h1 className="dark:text-white font-semibold xl:text-[1.8rem] lg:text-[1.8rem]">
             Content
           </h1>
-          <Editor story={story} setStory={setStory} content={content} />
+          {/* <Editor story={story} setStory={setStory} content={content} /> */}
+          <textarea
+            value={content}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+              setStory({ ...story, content: e.target.value });
+            }}
+          />
         </div>
 
         {/* button submit */}
